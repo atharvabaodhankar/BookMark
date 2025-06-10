@@ -3,6 +3,7 @@ import { supabase } from '../supabaseClient';
 
 function AddBookmark({ onBookmarkAdded }) {
   const [url, setUrl] = useState('');
+  const [titleInput, setTitleInput] = useState('');
   const [descriptionInput, setDescriptionInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -15,9 +16,10 @@ function AddBookmark({ onBookmarkAdded }) {
 
     try {
       // 1. Fetch link preview data
-      let title = 'No Title';
-      let description = 'No Description';
+      let fetchedTitle = '';
+      let fetchedDescription = '';
       let image = null;
+      let linkPreviewFailed = false;
 
       try {
         const previewResponse = await fetch(`https://api.linkpreview.net/?key=${linkPreviewApiKey}&q=${encodeURIComponent(url)}`);
@@ -26,22 +28,44 @@ function AddBookmark({ onBookmarkAdded }) {
         if (previewData.error) {
           console.warn('Link preview failed:', previewData.description);
           // If LinkPreview fails, use the URL as title and a generic description
-          title = url;
-          description = 'No description available from link preview.';
+          fetchedTitle = url;
+          fetchedDescription = 'No description available from link preview.';
+          linkPreviewFailed = true;
         } else {
-          title = previewData.title || url;
-          description = previewData.description || 'No description available from link preview.';
+          fetchedTitle = previewData.title || url;
+          fetchedDescription = previewData.description || 'No description available from link preview.';
           image = previewData.image || null;
         }
       } catch (previewError) {
         console.error('Error fetching link preview:', previewError.message);
         // If fetching LinkPreview fails entirely, use the URL as title and a generic description
-        title = url;
-        description = 'No description available from link preview.';
+        fetchedTitle = url;
+        fetchedDescription = 'No description available from link preview.';
+        linkPreviewFailed = true;
+      }
+
+      // Determine final title
+      let finalTitle;
+      if (titleInput) {
+        finalTitle = titleInput;
+      } else if (linkPreviewFailed) {
+        // If LinkPreview failed and user didn't provide a title, ask for one
+        setError('Link preview failed. Please provide a title for the bookmark.');
+        setLoading(false);
+        return;
+      } else {
+        finalTitle = fetchedTitle;
+      }
+
+      // If for some reason finalTitle is still empty (e.g., fetchedTitle was also empty and not caught by linkPreviewFailed)
+      if (!finalTitle) {
+        setError('Please provide a title for the bookmark.');
+        setLoading(false);
+        return;
       }
 
       // Use user-provided description if available, otherwise use the one from LinkPreview
-      const finalDescription = descriptionInput || description;
+      const finalDescription = descriptionInput || fetchedDescription;
 
       // 2. Save to Supabase
       const { data, error } = await supabase
@@ -50,7 +74,7 @@ function AddBookmark({ onBookmarkAdded }) {
           {
             user_id: (await supabase.auth.getSession()).data.session.user.id,
             url: url,
-            title: title,
+            title: finalTitle,
             description: finalDescription,
             image_url: image,
           },
@@ -60,6 +84,7 @@ function AddBookmark({ onBookmarkAdded }) {
       if (error) throw error;
 
       setUrl('');
+      setTitleInput('');
       setDescriptionInput('');
       onBookmarkAdded(); // Trigger refresh in Dashboard
       console.log('Bookmark added:', data);
@@ -81,6 +106,12 @@ function AddBookmark({ onBookmarkAdded }) {
           value={url}
           onChange={(e) => setUrl(e.target.value)}
           required
+        />
+        <input
+          type="text"
+          placeholder="Optional: Add a title"
+          value={titleInput}
+          onChange={(e) => setTitleInput(e.target.value)}
         />
         <textarea
           placeholder="Optional: Add a description"

@@ -29,11 +29,7 @@ function BookmarkList({ bookmarks, onDelete, onEdit }) {
               {bookmark.image_url && (
                 <div className="bookmark-image-wrapper">
                   <img src={bookmark.image_url} alt={bookmark.title} className="bookmark-thumbnail" />
-                  <div className="blur-overlay">
-                    <a href={bookmark.url} target="_blank" rel="noopener noreferrer" className="view-link">
-                      Open Link
-                    </a>
-                  </div>
+
                 </div>
               )}
               <div className="bookmark-details">
@@ -56,6 +52,7 @@ function BookmarkList({ bookmarks, onDelete, onEdit }) {
                     <h3>{bookmark.title}</h3>
                     <p>{bookmark.description}</p>
                     <div className="bookmark-actions">
+                      <a href={bookmark.url} target="_blank" rel="noopener noreferrer" className="view-link button">Open Link</a>
                       <button onClick={() => handleEditClick(bookmark)} className="edit-button">Edit</button>
                       <button onClick={() => onDelete(bookmark.id)} className="delete-button">Delete</button>
                     </div>
