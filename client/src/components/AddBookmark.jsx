@@ -3,6 +3,7 @@ import { supabase } from '../supabaseClient';
 
 function AddBookmark({ onBookmarkAdded }) {
   const [url, setUrl] = useState('');
+  const [descriptionInput, setDescriptionInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const linkPreviewApiKey = import.meta.env.VITE_LINKPREVIEW_API_KEY;
@@ -14,14 +15,33 @@ function AddBookmark({ onBookmarkAdded }) {
 
     try {
       // 1. Fetch link preview data
-      const previewResponse = await fetch(`https://api.linkpreview.net/?key=${linkPreviewApiKey}&q=${encodeURIComponent(url)}`);
-      const previewData = await previewResponse.json();
+      let title = 'No Title';
+      let description = 'No Description';
+      let image = null;
 
-      if (previewData.error) {
-        throw new Error(previewData.description || 'Failed to fetch link preview.');
+      try {
+        const previewResponse = await fetch(`https://api.linkpreview.net/?key=${linkPreviewApiKey}&q=${encodeURIComponent(url)}`);
+        const previewData = await previewResponse.json();
+
+        if (previewData.error) {
+          console.warn('Link preview failed:', previewData.description);
+          // If LinkPreview fails, use the URL as title and a generic description
+          title = url;
+          description = 'No description available from link preview.';
+        } else {
+          title = previewData.title || url;
+          description = previewData.description || 'No description available from link preview.';
+          image = previewData.image || null;
+        }
+      } catch (previewError) {
+        console.error('Error fetching link preview:', previewError.message);
+        // If fetching LinkPreview fails entirely, use the URL as title and a generic description
+        title = url;
+        description = 'No description available from link preview.';
       }
 
-      const { title, description, image } = previewData;
+      // Use user-provided description if available, otherwise use the one from LinkPreview
+      const finalDescription = descriptionInput || description;
 
       // 2. Save to Supabase
       const { data, error } = await supabase
@@ -30,9 +50,9 @@ function AddBookmark({ onBookmarkAdded }) {
           {
             user_id: (await supabase.auth.getSession()).data.session.user.id,
             url: url,
-            title: title || 'No Title',
-            description: description || 'No Description',
-            image_url: image || null,
+            title: title,
+            description: finalDescription,
+            image_url: image,
           },
         ])
         .select();
@@ -40,6 +60,7 @@ function AddBookmark({ onBookmarkAdded }) {
       if (error) throw error;
 
       setUrl('');
+      setDescriptionInput('');
       onBookmarkAdded(); // Trigger refresh in Dashboard
       console.log('Bookmark added:', data);
     } catch (error) {
@@ -60,6 +81,12 @@ function AddBookmark({ onBookmarkAdded }) {
           value={url}
           onChange={(e) => setUrl(e.target.value)}
           required
+        />
+        <textarea
+          placeholder="Optional: Add a description"
+          value={descriptionInput}
+          onChange={(e) => setDescriptionInput(e.target.value)}
+          rows="3"
         />
         <button type="submit" disabled={loading}>
           {loading ? 'Adding...' : 'Add Bookmark'}
