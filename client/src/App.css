@@ -26,6 +26,18 @@ body {
   font-weight: bold;
 }
 
+.btn{
+  padding: 10px 15px;
+  background-color: #61afef; /* A more modern blue */
+  color: #282c34;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer; 
+  margin: 10px 0;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Add transform for subtle effect */
+}
+
 .auth-container {
   display: flex;
   justify-content: center;

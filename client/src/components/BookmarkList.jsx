@@ -44,8 +44,8 @@ function BookmarkList({ bookmarks, onDelete, onEdit }) {
                       value={editedDescription}
                       onChange={(e) => setEditedDescription(e.target.value)}
                     />
-                    <button onClick={() => handleSaveEdit(bookmark.id)}>Save</button>
-                    <button onClick={() => setEditingBookmarkId(null)}>Cancel</button>
+                    <button className='btn' onClick={() => handleSaveEdit(bookmark.id)}>Save</button>
+                    <button className='btn' onClick={() => setEditingBookmarkId(null)}>Cancel</button>
                   </>
                 ) : (
                   <>
