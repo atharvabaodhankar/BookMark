@@ -246,27 +246,11 @@ body {
   transition: filter 0.3s ease;
 }
 
-.bookmark-item:hover .bookmark-thumbnail {
-  filter: blur(0); /* Reveal on hover */
-}
 
-.blur-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
 
-.bookmark-item:hover .blur-overlay {
-  opacity: 0; /* Hide overlay on hover */
-}
+
+
+
 
 .view-link {
   color: white;
