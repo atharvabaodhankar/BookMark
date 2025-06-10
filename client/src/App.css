@@ -2,8 +2,8 @@ body {
   font-family: 'Inter', sans-serif; /* Modern font */
   margin: 0;
   padding: 0;
-  background-color: #1a1a2e; /* Dark background */
-  color: #e0e0e0; /* Light text */
+  background-color: #282c34; /* Dark background */
+  color: #abb2bf; /* Light text */
   line-height: 1.6;
 }
 
@@ -11,15 +11,15 @@ body {
   max-width: 1200px;
   margin: 30px auto; /* More vertical space */
   padding: 30px; /* More padding */
-  background-color: #16213e; /* Slightly lighter dark background for containers */
+  background-color: #3a404c; /* Slightly lighter dark background for containers */
   border-radius: 12px; /* More rounded corners */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); /* Deeper shadow */
 }
 
 .error-message {
-  color: #ff7b7b; /* Lighter red for dark background */
-  background-color: #3a0000; /* Darker red background */
-  border: 1px solid #8b0000; /* Dark red border */
+  color: #e06c75; /* Lighter red for dark background */
+  background-color: #4a2025; /* Darker red background */
+  border: 1px solid #7a282e; /* Dark red border */
   padding: 12px;
   border-radius: 6px;
   margin-top: 15px;
@@ -34,19 +34,19 @@ body {
 }
 
 .auth-form {
-  background-color: #1e2a47; /* Darker background for auth form */
+  background-color: #3a404c; /* Darker background for auth form */
   padding: 40px; /* More padding */
   border-radius: 12px; /* More rounded corners */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Deeper, darker shadow */
   width: 100%;
   max-width: 450px; /* Slightly wider */
   text-align: center;
-  border: 1px solid #2a3b5b; /* Subtle border */
+  border: 1px solid #4b5263; /* Subtle border */
 }
 
 .auth-form h2 {
   margin-bottom: 25px;
-  color: #e0e0e0; /* Light text for headings */
+  color: #e6e6e6; /* Light text for headings */
   font-size: 28px;
 }
 
@@ -54,18 +54,18 @@ body {
   width: calc(100% - 24px); /* Adjust for padding */
   padding: 12px;
   margin-bottom: 20px;
-  border: 1px solid #3a4a6a; /* Darker border */
+  border: 1px solid #4b5263; /* Darker border */
   border-radius: 6px;
   font-size: 16px;
-  background-color: #16213e; /* Match container background */
-  color: #e0e0e0;
+  background-color: #282c34; /* Match container background */
+  color: #abb2bf;
 }
 
 .auth-form button {
   width: 100%;
   padding: 14px;
-  background-color: #0f4c75; /* A more modern blue */
-  color: white;
+  background-color: #61afef; /* A more modern blue */
+  color: #282c34;
   border: none;
   border-radius: 6px;
   font-size: 18px;
@@ -74,12 +74,12 @@ body {
 }
 
 .auth-form button:hover {
-  background-color: #3282b8; /* Lighter blue on hover */
+  background-color: #56b6c2; /* Lighter blue on hover */
   transform: translateY(-2px); /* Subtle lift effect */
 }
 
 .auth-form button:disabled {
-  background-color: #4a5a7a; /* Darker disabled color */
+  background-color: #4b5263; /* Darker disabled color */
   cursor: not-allowed;
   transform: none;
 }
@@ -87,18 +87,18 @@ body {
 .auth-form p {
   margin-top: 20px;
   font-size: 15px;
-  color: #b0b0b0; /* Lighter grey */
+  color: #abb2bf; /* Lighter grey */
 }
 
 .auth-toggle {
-  color: #3282b8; /* Match button hover color */
+  color: #61afef; /* Match button hover color */
   cursor: pointer;
   text-decoration: none; /* Remove underline */
   font-weight: bold;
 }
 
 .auth-toggle:hover {
-  color: #0f4c75; /* Darker blue on hover */
+  color: #56b6c2; /* Darker blue on hover */
   text-decoration: underline; /* Add underline on hover */
 }
 
@@ -110,13 +110,13 @@ body {
 }
 
 .navbar {
-  background-color: #0f4c75; /* Primary blue for navbar */
-  background-image: linear-gradient(to right, #0f4c75, #3282b8); /* Subtle gradient */
+  background-color: #282c34; /* Primary blue for navbar */
+  background-image: linear-gradient(to right, #282c34, #3a404c); /* Subtle gradient */
   padding: 18px 30px; /* More padding */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
+  color: #e6e6e6;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
 }
 
@@ -149,7 +149,7 @@ body {
 }
 
 .navbar-link:hover, .navbar-button:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Lighter hover effect */
+  background-color: rgba(97, 175, 239, 0.2); /* Lighter hover effect */
   transform: translateY(-2px); /* Subtle lift */
 }
 
@@ -159,24 +159,24 @@ body {
 
 .dashboard-container h1 {
   text-align: center;
-  color: #e0e0e0; /* Light text */
+  color: #e6e6e6; /* Light text */
   margin-bottom: 40px;
   font-size: 36px;
   letter-spacing: 1.5px;
 }
 
 .add-bookmark-container {
-  background-color: #1e2a47; /* Darker background */
+  background-color: #3a404c; /* Darker background */
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3); /* Deeper shadow */
   margin-bottom: 40px;
   text-align: center;
-  border: 1px solid #2a3b5b; /* Subtle border */
+  border: 1px solid #4b5263; /* Subtle border */
 }
 
 .add-bookmark-container h3 {
-  color: #e0e0e0; /* Light text */
+  color: #e6e6e6; /* Light text */
   margin-bottom: 25px;
   font-size: 24px;
 }
@@ -208,8 +208,8 @@ body {
 
 .add-bookmark-form button {
   padding: 14px 25px;
-  background-color: #0f4c75; /* Modern blue */
-  color: white;
+  background-color: #61afef; /* Modern blue */
+  color: #e6e6e6;
   border: none;
   border-radius: 6px;
   font-size: 17px;
@@ -218,12 +218,12 @@ body {
 }
 
 .add-bookmark-form button:hover {
-  background-color: #3282b8; /* Lighter blue on hover */
+  background-color: #56b6c2; /* Lighter blue on hover */
   transform: translateY(-2px);
 }
 
 .add-bookmark-form button:disabled {
-  background-color: #4a5a7a; /* Darker disabled color */
+  background-color: #4b5263; /* Darker disabled color */
   cursor: not-allowed;
   transform: none;
 }
@@ -235,7 +235,7 @@ body {
 
 .bookmark-list-container p {
   text-align: center;
-  color: #b0b0b0; /* Lighter grey */
+  color: #abb2bf; /* Lighter grey */
   font-style: italic;
   font-size: 1.1em;
 }
@@ -249,7 +249,7 @@ body {
 }
 
 .bookmark-item {
-  background-color: #1e2a47; /* Darker background */
+  background-color: #3a404c; /* Darker background */
   border-radius: 12px; /* More rounded corners */
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3); /* Deeper shadow */
   overflow: hidden;
@@ -257,7 +257,7 @@ body {
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smoother transition */
   position: relative;
-  border: 1px solid #2a3b5b; /* Subtle border */
+  border: 1px solid #4b5263; /* Subtle border */
 }
 
 .bookmark-item:hover {
@@ -273,7 +273,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid #2a3b5b; /* Separator */
+  border-bottom: 1px solid #4b5263; /* Separator */
 }
 
 .bookmark-thumbnail {
@@ -288,18 +288,18 @@ body {
 }
 
 .view-link {
-  color: white;
+  color: #e6e6e6;
   text-decoration: none;
   font-size: 1.1em;
   font-weight: bold;
   padding: 12px 22px;
-  background-color: #0f4c75; /* Modern blue */
+  background-color: #61afef; /* Modern blue */
   border-radius: 6px;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .view-link:hover {
-  background-color: #3282b8; /* Lighter blue on hover */
+  background-color: #56b6c2; /* Lighter blue on hover */
   transform: translateY(-2px);
 }
 
@@ -313,14 +313,14 @@ body {
 .bookmark-details h3 {
   margin-top: 0;
   font-size: 1.3em; /* Larger title */
-  color: #e0e0e0; /* Light text */
+  color: #e6e6e6; /* Light text */
   margin-bottom: 10px;
   font-weight: bold;
 }
 
 .bookmark-details p {
   font-size: 1em; /* Slightly larger description */
-  color: #b0b0b0; /* Lighter grey */
+  color: #abb2bf; /* Lighter grey */
   line-height: 1.6;
   flex-grow: 1; /* Allows description to take available space */
   margin-bottom: 15px;
@@ -331,10 +331,11 @@ body {
   width: calc(100% - 24px); /* Adjust for padding */
   padding: 12px;
   margin-bottom: 15px;
-  border: 1px solid #3a4a6a; /* Darker border */
+  border: 1px solid #4b5263; /* Darker border */
   border-radius: 6px;
-  background-color: #16213e; /* Match container background */
-  color: #e0e0e0;
+  background-color: #282c34; /* Match container background */
+  color: #abb2bf;
+  font-size: 16px;
   font-size: 16px;
 }
 
@@ -359,13 +360,13 @@ body {
 }
 
 .delete-button {
-  background-color: #dc3545; /* Red */
-  color: white;
+  background-color: #e06c75; /* Red */
+  color: #e6e6e6;
 }
 
 .open-button {
-  background-color: #0f4c75; /* Modern blue */
-  color: white;
+  background-color: #61afef; /* Modern blue */
+  color: #e6e6e6;
 }
 
 .bookmark-actions button:hover {
