@@ -228,11 +228,7 @@ background-color: rgba(97, 175, 239, 0.2);
     gap: 10px;
   }
 
-  .add-bookmark-form input[type="url"],
-  .add-bookmark-form input[type="text"],
-  .add-bookmark-form textarea {
-    width: 100%;
-  }
+
 
   .bookmark-item {
     flex-direction: column;
@@ -243,6 +239,12 @@ background-color: rgba(97, 175, 239, 0.2);
     margin-top: 10px;
     width: 100%;
     justify-content: flex-end;
+  }
+  .add-bookmark-container{
+    padding: 10px;
+  }
+  .dashboard-container{
+    padding: 10px;
   }
 }
 
