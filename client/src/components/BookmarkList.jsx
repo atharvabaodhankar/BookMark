@@ -26,16 +26,16 @@ function BookmarkList({ bookmarks, onDelete, onEdit }) {
         <ul className="bookmark-grid">
           {bookmarks.map((bookmark) => (
             <li key={bookmark.id} className="bookmark-item">
-              <div className="bookmark-image-wrapper">
-                {bookmark.image_url && (
+              {bookmark.image_url && (
+                <div className="bookmark-image-wrapper">
                   <img src={bookmark.image_url} alt={bookmark.title} className="bookmark-thumbnail" />
-                )}
-                <div className="blur-overlay">
-                  <a href={bookmark.url} target="_blank" rel="noopener noreferrer" className="view-link">
-                    Open Link
-                  </a>
+                  <div className="blur-overlay">
+                    <a href={bookmark.url} target="_blank" rel="noopener noreferrer" className="view-link">
+                      Open Link
+                    </a>
+                  </div>
                 </div>
-              </div>
+              )}
               <div className="bookmark-details">
                 {editingBookmarkId === bookmark.id ? (
                   <>
