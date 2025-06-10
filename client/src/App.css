@@ -107,6 +107,7 @@ body {
   padding: 10px;
   border-radius: 4px;
   font-weight: bold;
+  background-color:#282c34 ; /* Darker background */;
 }
 
 .navbar {
