@@ -2,8 +2,8 @@ body {
   font-family: 'Inter', sans-serif; /* Modern font */
   margin: 0;
   padding: 0;
-  background-color: #282c34; /* Dark background */
-  color: #abb2bf; /* Light text */
+  background-color: #f0f2f5; /* Light background */
+  color: #333; /* Dark text */
   line-height: 1.6;
 }
 
@@ -11,15 +11,15 @@ body {
   max-width: 1200px;
   margin: 30px auto; /* More vertical space */
   padding: 30px; /* More padding */
-  background-color: #3a404c; /* Slightly lighter dark background for containers */
+  background-color: #ffffff; /* White background for containers */
   border-radius: 12px; /* More rounded corners */
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); /* Deeper shadow */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Softer shadow */
 }
 
 .error-message {
-  color: #e06c75; /* Lighter red for dark background */
-  background-color: #4a2025; /* Darker red background */
-  border: 1px solid #7a282e; /* Dark red border */
+  color: #d9534f; /* Red for error */
+  background-color: #f2dede; /* Light red background */
+  border: 1px solid #ebccd1; /* Light red border */
   padding: 12px;
   border-radius: 6px;
   margin-top: 15px;
@@ -28,8 +28,8 @@ body {
 
 .btn{
   padding: 10px 15px;
-  background-color: #61afef; /* A more modern blue */
-  color: #282c34;
+  background-color: #007bff; /* Primary blue */
+  color: #ffffff;
   border: none;
   border-radius: 6px;
   font-size: 18px;
@@ -46,19 +46,19 @@ body {
 }
 
 .auth-form {
-  background-color: #3a404c; /* Darker background for auth form */
+  background-color: #ffffff; /* White background for auth form */
   padding: 40px; /* More padding */
   border-radius: 12px; /* More rounded corners */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Deeper, darker shadow */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Softer shadow */
   width: 100%;
   max-width: 450px; /* Slightly wider */
   text-align: center;
-  border: 1px solid #4b5263; /* Subtle border */
+  border: 1px solid #e0e0e0; /* Subtle border */
 }
 
 .auth-form h2 {
   margin-bottom: 25px;
-  color: #e6e6e6; /* Light text for headings */
+  color: #333; /* Dark text for headings */
   font-size: 28px;
 }
 
@@ -66,18 +66,18 @@ body {
   width: calc(100% - 24px); /* Adjust for padding */
   padding: 12px;
   margin-bottom: 20px;
-  border: 1px solid #4b5263; /* Darker border */
+  border: 1px solid #ccc; /* Lighter border */
   border-radius: 6px;
   font-size: 16px;
-  background-color: #282c34; /* Match container background */
-  color: #abb2bf;
+  background-color: #f9f9f9; /* Light input background */
+  color: #333;
 }
 
 .auth-form button {
   width: 100%;
   padding: 14px;
-  background-color: #61afef; /* A more modern blue */
-  color: #282c34;
+  background-color: #007bff; /* Primary blue */
+  color: #ffffff;
   border: none;
   border-radius: 6px;
   font-size: 18px;
@@ -86,12 +86,12 @@ body {
 }
 
 .auth-form button:hover {
-  background-color: #56b6c2; /* Lighter blue on hover */
+  background-color: #0056b3; /* Darker blue on hover */
   transform: translateY(-2px); /* Subtle lift effect */
 }
 
 .auth-form button:disabled {
-  background-color: #4b5263; /* Darker disabled color */
+  background-color: #cccccc; /* Lighter disabled color */
   cursor: not-allowed;
   transform: none;
 }
@@ -99,18 +99,18 @@ body {
 .auth-form p {
   margin-top: 20px;
   font-size: 15px;
-  color: #abb2bf; /* Lighter grey */
+  color: #666; /* Darker grey */
 }
 
 .auth-toggle {
-  color: #61afef; /* Match button hover color */
+  color: #007bff; /* Match button color */
   cursor: pointer;
   text-decoration: none; /* Remove underline */
   font-weight: bold;
 }
 
 .auth-toggle:hover {
-  color: #56b6c2; /* Darker blue on hover */
+  color: #0056b3; /* Darker blue on hover */
   text-decoration: underline; /* Add underline on hover */
 }
 
@@ -119,22 +119,22 @@ body {
   padding: 10px;
   border-radius: 4px;
   font-weight: bold;
-  background-color:#282c34 ; /* Darker background */;
+  background-color:#e9ecef ; /* Light background */;
 }
 
 .navbar {
-  background-color: #282c34; /* Primary blue for navbar */
-  background-image: linear-gradient(to right, #282c34, #3a404c); /* Subtle gradient */
+  background-color: #ffffff; /* White background for navbar */
+  background-image: linear-gradient(to right, #ffffff, #f8f9fa); /* Subtle gradient */
   padding: 18px 30px; /* More padding */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #e6e6e6;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
+  color: #333;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
 .navbar-brand {
-  color: white;
+  color: #333; /* Dark text */
   text-decoration: none;
   font-size: 28px; /* Larger font */
   font-weight: bold;
@@ -150,9 +150,9 @@ body {
 }
 
 .navbar-link, .navbar-button {
-  color: white;
+  color: #007bff; /* Primary blue */
   text-decoration: none;
-background-color: rgba(97, 175, 239, 0.2);
+  background-color: transparent;
   border: none;
   padding: 10px 15px; /* More padding */
   border-radius: 6px; /* More rounded corners */
@@ -162,7 +162,7 @@ background-color: rgba(97, 175, 239, 0.2);
 }
 
 .navbar-link:hover, .navbar-button:hover {
-  background-color: rgba(97, 175, 239, 0.2); /* Lighter hover effect */
+  background-color: #e9ecef; /* Light hover effect */
   transform: translateY(-2px); /* Subtle lift */
 }
 
@@ -172,24 +172,24 @@ background-color: rgba(97, 175, 239, 0.2);
 
 .dashboard-container h1 {
   text-align: center;
-  color: #e6e6e6; /* Light text */
+  color: #333; /* Dark text */
   margin-bottom: 40px;
   font-size: 36px;
   letter-spacing: 1.5px;
 }
 
 .add-bookmark-container {
-  background-color: #3a404c; /* Darker background */
+  background-color: #ffffff; /* White background */
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3); /* Deeper shadow */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Softer shadow */
   margin-bottom: 40px;
   text-align: center;
-  border: 1px solid #4b5263; /* Subtle border */
+  border: 1px solid #e0e0e0; /* Subtle border */
 }
 
 .add-bookmark-container h3 {
-  color: #e6e6e6; /* Light text */
+  color: #333; /* Dark text */
   margin-bottom: 25px;
   font-size: 24px;
 }
@@ -295,7 +295,7 @@ background-color: rgba(97, 175, 239, 0.2);
 
 .bookmark-list-container p {
   text-align: center;
-  color: #abb2bf; /* Lighter grey */
+  color: #666; /* Darker grey */
   font-style: italic;
   font-size: 1.1em;
 }
@@ -309,20 +309,20 @@ background-color: rgba(97, 175, 239, 0.2);
 }
 
 .bookmark-item {
-  background-color: #3a404c; /* Darker background */
+  background-color: #ffffff; /* White background */
   border-radius: 12px; /* More rounded corners */
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3); /* Deeper shadow */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Softer shadow */
   overflow: hidden;
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smoother transition */
   position: relative;
-  border: 1px solid #4b5263; /* Subtle border */
+  border: 1px solid #e0e0e0; /* Subtle border */
 }
 
 .bookmark-item:hover {
   transform: translateY(-8px); /* More pronounced lift */
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5); /* Even deeper shadow on hover */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2); /* Even deeper shadow on hover */
 }
 
 .bookmark-image-wrapper {
@@ -333,7 +333,7 @@ background-color: rgba(97, 175, 239, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid #4b5263; /* Separator */
+  border-bottom: 1px solid #e0e0e0; /* Separator */
 }
 
 .bookmark-thumbnail {
@@ -348,18 +348,18 @@ background-color: rgba(97, 175, 239, 0.2);
 }
 
 .view-link {
-  color: #e6e6e6;
+  color: #ffffff;
   text-decoration: none;
   font-size: 1.1em;
   font-weight: bold;
   padding: 12px 22px;
-  background-color: #61afef; /* Modern blue */
+  background-color: #007bff; /* Primary blue */
   border-radius: 6px;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .view-link:hover {
-  background-color: #56b6c2; /* Lighter blue on hover */
+  background-color: #0056b3; /* Darker blue on hover */
   transform: translateY(-2px);
 }
 
@@ -373,14 +373,14 @@ background-color: rgba(97, 175, 239, 0.2);
 .bookmark-details h3 {
   margin-top: 0;
   font-size: 1.3em; /* Larger title */
-  color: #e6e6e6; /* Light text */
+  color: #333; /* Dark text */
   margin-bottom: 10px;
   font-weight: bold;
 }
 
 .bookmark-details p {
   font-size: 1em; /* Slightly larger description */
-  color: #abb2bf; /* Lighter grey */
+  color: #555; /* Darker grey */
   line-height: 1.6;
   flex-grow: 1; /* Allows description to take available space */
   margin-bottom: 15px;
@@ -391,10 +391,10 @@ background-color: rgba(97, 175, 239, 0.2);
   width: calc(100% - 24px); /* Adjust for padding */
   padding: 12px;
   margin-bottom: 15px;
-  border: 1px solid #4b5263; /* Darker border */
+  border: 1px solid #ccc; /* Lighter border */
   border-radius: 6px;
-  background-color: #282c34; /* Match container background */
-  color: #abb2bf;
+  background-color: #f9f9f9; /* Light input background */
+  color: #333;
   font-size: 16px;
   font-size: 16px;
 }
@@ -420,13 +420,13 @@ background-color: rgba(97, 175, 239, 0.2);
 }
 
 .delete-button {
-  background-color: #e06c75; /* Red */
-  color: #e6e6e6;
+  background-color: #dc3545; /* Red */
+  color: #ffffff;
 }
 
 .open-button {
-  background-color: #61afef; /* Modern blue */
-  color: #e6e6e6;
+  background-color: #007bff; /* Primary blue */
+  color: #ffffff;
 }
 
 .bookmark-actions button:hover {
