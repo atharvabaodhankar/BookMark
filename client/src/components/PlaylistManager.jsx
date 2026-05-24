@@ -171,9 +171,14 @@ function PlaylistManager({
     (c) => c.status === 'pending' && c.sender_id === currentUserId
   );
   const activeFriends = connections.filter((c) => c.status === 'accepted');
+  const activeFriendIds = activeFriends.map((c) =>
+    c.sender_id === currentUserId ? c.receiver_id : c.sender_id
+  );
 
   const myPlaylists = playlists.filter((p) => p.user_id === currentUserId);
-  const otherPlaylists = playlists.filter((p) => p.user_id !== currentUserId);
+  const otherPlaylists = playlists.filter(
+    (p) => p.user_id !== currentUserId && activeFriendIds.includes(p.user_id)
+  );
 
   return (
     <div className="playlist-sidebar">
