@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { supabase } from '../supabaseClient';
 
-function AddBookmark({ onBookmarkAdded }) {
+function AddBookmark({ onBookmarkAdded, currentUserId }) {
   const [url, setUrl] = useState('');
   const [titleInput, setTitleInput] = useState('');
   const [descriptionInput, setDescriptionInput] = useState('');
@@ -72,7 +72,7 @@ function AddBookmark({ onBookmarkAdded }) {
         .from('bookmarks')
         .insert([
           {
-            user_id: (await supabase.auth.getSession()).data.session.user.id,
+            user_id: currentUserId,
             url: url,
             title: finalTitle,
             description: finalDescription,
